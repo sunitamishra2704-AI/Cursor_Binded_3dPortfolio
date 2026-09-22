@@ -115,7 +115,7 @@ export default function HeroCanvas({ onLoaded }: Props) {
     const frames: HTMLImageElement[] = []
     for (let i = 0; i < TOTAL_FRAMES; i++) {
       const img = new Image()
-      img.src = `/frames/frame_${String(i).padStart(2, '0')}.webp`
+      img.src = `${import.meta.env.BASE_URL}frames/frame_${String(i).padStart(2, '0')}.webp`
       img.onload = onLoad
       img.onerror = onLoad
       frames.push(img)
@@ -124,7 +124,7 @@ export default function HeroCanvas({ onLoaded }: Props) {
 
     // Load center frame
     const center = new Image()
-    center.src = '/frames/center.webp'
+    center.src = `${import.meta.env.BASE_URL}frames/center.webp`
     center.onload = onLoad
     center.onerror = onLoad
     centerRef.current = center
